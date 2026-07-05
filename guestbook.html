@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>留言板 · 赵邵平</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guestbook-form {
+      max-width: 600px;
+      margin: 0 auto var(--space-2xl);
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+    }
+    .form-group {
+      margin-bottom: var(--space-lg);
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .submit-btn {
+      display: inline-block;
+      padding: 10px 28px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .form-message {
+      font-size: 0.9rem;
+      margin-top: var(--space-md);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      display: none;
+    }
+    .form-message.success {
+      display: block;
+      background: rgba(0, 200, 83, 0.1);
+      color: #00c853;
+      border: 1px solid rgba(0, 200, 83, 0.2);
+    }
+    .form-message.error {
+      display: block;
+      background: rgba(255, 55, 55, 0.1);
+      color: #ff3737;
+      border: 1px solid rgba(255, 55, 55, 0.2);
+    }
+
+    .message-item {
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-md);
+      transition: all var(--transition);
+    }
+    .message-item:hover {
+      border-color: var(--primary-light);
+    }
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-sm);
+    }
+    .message-name {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .message-time {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .message-content {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .empty-messages {
+      text-align: center;
+      padding: var(--space-3xl);
+      color: var(--text-muted);
+    }
+    .loading {
+      text-align: center;
+      padding: var(--space-xl);
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">赵<span>邵平</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">首页</a>
+        <a href="resume.html">简历</a>
+        <a href="blog/">博客</a>
+        <a href="projects/">项目</a>
+        <a href="about.html">关于</a>
+        <a href="guestbook.html" class="active">留言</a>
+        <button class="theme-toggle" id="theme-toggle">🌙</button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">留言板</h1>
+      <p class="page-subtitle">来打个招呼吧 👋</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <!-- 留言表单 -->
+      <div class="guestbook-form">
+        <div class="form-group">
+          <label for="name">昵称 *</label>
+          <input type="text" id="name" placeholder="你的名字" maxlength="20">
+        </div>
+        <div class="form-group">
+          <label for="content">留言内容 *</label>
+          <textarea id="content" placeholder="想说什么..." maxlength="500"></textarea>
+        </div>
+        <button class="submit-btn" id="submit-btn" onclick="submitMessage()">发表留言</button>
+        <div id="form-message" class="form-message"></div>
+      </div>
+
+      <!-- 留言列表 -->
+      <h2 class="section-title" style="margin-top: var(--space-2xl);">已有留言</h2>
+      <div id="messages-container">
+        <div class="loading" id="loading">加载中...</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2025 赵邵平 · Built with ❤️</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    const API_BASE = '/api/messages';
+
+    // 提交留言
+    async function submitMessage() {
+      const name = document.getElementById('name').value.trim();
+      const content = document.getElementById('content').value.trim();
+      const btn = document.getElementById('submit-btn');
+      const msg = document.getElementById('form-message');
+
+      if (!name) { showFormMsg('请填写昵称', 'error'); return; }
+      if (!content) { showFormMsg('请填写留言内容', 'error'); return; }
+
+      btn.disabled = true;
+      btn.textContent = '提交中...';
+
+      try {
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, content }),
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          showFormMsg(err.error || '提交失败', 'error');
+          btn.disabled = false;
+          btn.textContent = '发表留言';
+          return;
+        }
+
+        showFormMsg('留言成功！', 'success');
+        document.getElementById('name').value = '';
+        document.getElementById('content').value = '';
+        loadMessages(); // 刷新留言列表
+      } catch (e) {
+        showFormMsg('网络错误，请稍后重试', 'error');
+      }
+
+      btn.disabled = false;
+      btn.textContent = '发表留言';
+    }
+
+    function showFormMsg(text, type) {
+      const msg = document.getElementById('form-message');
+      msg.textContent = text;
+      msg.className = 'form-message ' + type;
+    }
+
+    // 加载留言列表
+    async function loadMessages() {
+      const container = document.getElementById('messages-container');
+      container.innerHTML = '<div class="loading">加载中...</div>';
+
+      try {
+        const res = await fetch(API_BASE);
+        const messages = await res.json();
+
+        if (!messages || messages.length === 0) {
+          container.innerHTML = '<div class="empty-messages">还没有留言，来做第一个吧！😊</div>';
+          return;
+        }
+
+        let html = '';
+        messages.forEach(function(m) {
+          html += `
+            <div class="message-item">
+              <div class="message-header">
+                <span class="message-name">${escapeHtml(m.name)}</span>
+                <span class="message-time">${m.time}</span>
+              </div>
+              <div class="message-content">${escapeHtml(m.content)}</div>
+            </div>
+          `;
+        });
+        container.innerHTML = html;
+      } catch (e) {
+        container.innerHTML = '<div class="empty-messages">留言板暂不可用，请稍后再来 😅</div>';
+      }
+    }
+
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(text));
+      return div.innerHTML;
+    }
+
+    // 页面加载时读取留言
+    loadMessages();
+  </script>
+</body>
+</html>
