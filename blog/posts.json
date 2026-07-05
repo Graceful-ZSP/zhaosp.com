@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "你好，世界！",
+    "date": "2025-07-05",
+    "excerpt": "这是我的个人网站第一篇博客。聊聊为什么要做这个网站，以及未来会写些什么。",
+    "tags": ["随笔"]
+  },
+  {
+    "slug": "cnn-lstm-underwater-navigation",
+    "title": "CNN-LSTM 在水下导航中的应用实践",
+    "date": "2025-07-05",
+    "excerpt": "分享我在多普勒计程仪速度估计优化中使用 CNN-LSTM 混合网络的经验与思考。",
+    "tags": ["深度学习", "水下导航", "论文"]
+  }
+]

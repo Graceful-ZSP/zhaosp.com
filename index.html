@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="赵邵平 - 西北工业大学控制工程硕士，水下航行器导航与控制、深度学习方向。个人主页与博客。">
+  <title>赵邵平 · 个人主页</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 导航栏 ========== -->
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="/" class="nav-logo">赵<span>邵平</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/" class="active">首页</a>
+        <a href="resume.html">简历</a>
+        <a href="blog/">博客</a>
+        <a href="projects/">项目</a>
+        <a href="about.html">关于</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换深色模式">🌙</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero 区域 ========== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 class="hero-name">赵<span>邵平</span></h1>
+      <p class="hero-title">水下航行器导航与控制 · 深度学习 · 系统工程</p>
+      <div class="hero-tags">
+        <span class="hero-tag">西北工业大学 · 硕士</span>
+        <span class="hero-tag">导航与控制</span>
+        <span class="hero-tag">UUV 总装总调</span>
+        <span class="hero-tag">深度学习</span>
+        <span class="hero-tag">湖试/海试</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>向下滚动</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== 核心数据卡片 ========== -->
+  <section class="section" id="stats">
+    <div class="container">
+      <h2 class="section-title">核心数据</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="6" data-suffix="%"></div>
+          <div class="stat-label">硕士排名<br>西北工业大学 · 前6%</div>
+          <div class="stat-sub">985 推免</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="1" data-suffix=" 篇"></div>
+          <div class="stat-label">SCI 论文<br>Drones · IF=4.8</div>
+          <div class="stat-sub">CNN-LSTM 水下导航</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="160" data-suffix="+ 天"></div>
+          <div class="stat-label">外场试验<br>陕西·福建·云南</div>
+          <div class="stat-sub">4 次主导测试周期</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="5" data-suffix=" 条"></div>
+          <div class="stat-label">UUV 总装总调<br>全流程交付</div>
+          <div class="stat-sub">零事故</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 技能标签云 ========== -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title">技术栈</h2>
+      <div class="skills-cloud">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">C 语言</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Windows</span>
+        <span class="skill-tag">QT</span>
+        <span class="skill-tag">ROS</span>
+        <span class="skill-tag">LabVIEW</span>
+        <span class="skill-tag">Keil</span>
+        <span class="skill-tag">Matlab</span>
+        <span class="skill-tag">嵌入式系统</span>
+        <span class="skill-tag">深度学习</span>
+        <span class="skill-tag">导航与控制</span>
+        <span class="skill-tag">传感器调试</span>
+        <span class="skill-tag">通信协议</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 精选项目 ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">精选项目</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-title">基于深度学习的高精度水下导航研究</div>
+          <div class="project-card-role">负责人 · 2024.05 — 至今</div>
+          <div class="project-card-desc">
+            基于自构数据集，利用轻量化 CNN-LSTM 混合网络动态融合原始惯性数据时空特征，
+            优化多普勒计程仪速度精度超过 69%，成果发表于 Drones（IF=4.8）。
+          </div>
+          <div class="project-card-tags">
+            <span>Python</span>
+            <span>深度学习</span>
+            <span>CNN-LSTM</span>
+            <span>多源传感器</span>
+          </div>
+          <a href="projects/deep-learning-navigation.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-title">XX 小型无人潜航器（UUV）总装总调</div>
+          <div class="project-card-role">调试工程师 · 2024.11 — 2025.03</div>
+          <div class="project-card-desc">
+            完成 5 条 UUV 的总装总调，从电缆测试、传感器标定到整机联调，
+            保障 UUV 基础航行能力验证交付。
+          </div>
+          <div class="project-card-tags">
+            <span>QT</span>
+            <span>CAN</span>
+            <span>串口/网口</span>
+            <span>系统集成</span>
+          </div>
+          <a href="projects/uuv-assembly.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-title">东部战区 XX 部队 SL 试验</div>
+          <div class="project-card-role">外场总指挥 · 2025.04 — 2025.07</div>
+          <div class="project-card-desc">
+            策划并指挥陕西醴泉湖 2 阶段和丹江口 1 阶段高强度湖上试验，
+            独立指挥跨单位联合团队，零事故发生，核心指标一次性达标。
+          </div>
+          <div class="project-card-tags">
+            <span>硬件测试</span>
+            <span>平台搭建</span>
+            <span>北斗</span>
+            <span>试验策划</span>
+          </div>
+          <a href="projects/sl-test.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-title">XX 虚实结合 YX 验证</div>
+          <div class="project-card-role">主操控手 · 2024.05 — 2024.06</div>
+          <div class="project-card-desc">
+            基于 QT 开发目标点规划工具，主控 UUV 在 5 节航速、3 级海况下
+            完成自主任务，航迹跟踪精度超预期 20%，获"操作精准度标兵"评价。
+          </div>
+          <div class="project-card-tags">
+            <span>QT</span>
+            <span>平台控制</span>
+            <span>试验设计</span>
+          </div>
+          <a href="projects/yx-validation.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 联系方式 ========== -->
+  <section class="section contact-section">
+    <div class="container">
+      <h2 class="section-title">联系方式</h2>
+      <div class="contact-links">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <span class="contact-text">zhaosp18285595197@163.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span class="contact-text">193 1455 0628</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🐙</span>
+          <span class="contact-text">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2025 赵邵平 · Built with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- 返回顶部 -->
+  <button class="back-top" id="back-top" aria-label="返回顶部">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

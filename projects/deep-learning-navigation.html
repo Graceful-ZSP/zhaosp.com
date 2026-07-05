@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基于深度学习的高精度水下导航研究 · 赵邵平</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">赵<span>邵平</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">首页</a>
+        <a href="../resume.html">简历</a>
+        <a href="../blog/">博客</a>
+        <a href="./">项目</a>
+        <a href="../about.html">关于</a>
+        <button class="theme-toggle" id="theme-toggle">🌙</button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">基于深度学习的高精度水下导航研究</h1>
+      <p class="page-subtitle">负责人 · 2024.05 — 至今</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container project-detail">
+      <div class="about-card" style="margin-bottom: var(--space-2xl);">
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-lg);">
+          <div><strong>关键词：</strong>Python · 深度学习 · CNN-LSTM · 多源传感器</div>
+          <div><strong>成果：</strong>SCI 二区论文（Drones, IF=4.8）</div>
+        </div>
+      </div>
+
+      <h2>项目背景</h2>
+      <p>多普勒计程仪（DVL）是水下航行器导航系统中的核心测速设备，但其速度估计精度在实际水下环境中容易受到多种因素干扰，包括水体浑浊、航行姿态变化和多径效应等。本项目旨在利用深度学习方法，通过融合惯性导航系统（INS）数据，对 DVL 的速度估计误差进行建模和补偿。</p>
+
+      <h2>我的工作</h2>
+      <h3>1. 数据采集系统开发</h3>
+      <p>开发基于 Python 的自动化数据存储脚本，集成多线程技术实现多源传感器（惯性导航单元、多普勒计程仪、卫星差分定位设备）数据并行采集，确保各传感器数据的时间同步精度。</p>
+
+      <h3>2. 外场试验</h3>
+      <p>设计外场试验方案，搭建试验平台，带队完成 4 个湖试/海试周期的数据采集。整理完成后开源数据集，编写技术文档（算法白皮书、试验报告等）。</p>
+
+      <h3>3. 算法研发</h3>
+      <p>针对多普勒计程仪速度估计误差偏移问题，利用轻量化 CNN-LSTM 混合网络架构，动态融合原始惯性数据的时空特征，优化多普勒设备输出速度精度比例超过 69%。</p>
+
+      <h2>成果与发表</h2>
+      <p>研究成果发表于《Drones》（IF=4.8），审稿人评价"为水下导航噪声抑制提供了创新性方法论"。</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2025 赵邵平 · <a href="./">← 返回项目列表</a></p>
+    </div>
+  </footer>
+  <button class="back-top" id="back-top">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

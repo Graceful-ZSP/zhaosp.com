@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="赵邵平的项目展示 - 科研项目与工程实践">
+  <title>项目 · 赵邵平</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-2xl);
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all var(--transition);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(26, 107, 255, 0.08);
+    }
+    .project-detail { max-width: 760px; margin: 0 auto; }
+    .project-detail h2 { font-size: 1.5rem; margin-top: var(--space-2xl); margin-bottom: var(--space-md); color: var(--text-primary); }
+    .project-detail h3 { font-size: 1.15rem; margin-top: var(--space-xl); margin-bottom: var(--space-sm); color: var(--text-primary); }
+    .project-detail p { margin-bottom: var(--space-lg); color: var(--text-secondary); line-height: 1.8; }
+    .project-detail ul { padding-left: var(--space-xl); margin-bottom: var(--space-lg); }
+    .project-detail li { margin-bottom: var(--space-sm); color: var(--text-secondary); line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="/" class="nav-logo">赵<span>邵平</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">首页</a>
+        <a href="../resume.html">简历</a>
+        <a href="../blog/">博客</a>
+        <a href="./" class="active">项目</a>
+        <a href="../about.html">关于</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换深色模式">🌙</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">项目</h1>
+      <p class="page-subtitle">科研项目 · 工程实践 · 竞赛成果</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="research">科研项目</button>
+        <button class="filter-btn" data-filter="engineering">工程实践</button>
+        <button class="filter-btn" data-filter="competition">竞赛</button>
+      </div>
+
+      <div class="projects-grid" id="project-list">
+
+        <div class="project-card" data-category="research">
+          <div class="project-card-title">基于深度学习的高精度水下导航研究</div>
+          <div class="project-card-role">负责人 · 2024.05 — 至今</div>
+          <div class="project-card-desc">
+            基于 CNN-LSTM 混合网络优化多普勒计程仪速度估计精度超过 69%，
+            成果发表于 Drones（IF=4.8）。带队完成 4 个湖试/海试周期的数据采集。
+          </div>
+          <div class="project-card-tags">
+            <span>Python</span><span>深度学习</span><span>CNN-LSTM</span>
+          </div>
+          <a href="deep-learning-navigation.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card" data-category="engineering">
+          <div class="project-card-title">东部战区 XX 部队 SL 试验</div>
+          <div class="project-card-role">外场总指挥 · 2025.04 — 2025.07</div>
+          <div class="project-card-desc">
+            策划指挥醴泉湖 2 阶段和丹江口 1 阶段高强度湖试，
+            独立指挥跨单位联合团队，零事故发生，核心指标一次性达标。
+          </div>
+          <div class="project-card-tags">
+            <span>硬件测试</span><span>北斗</span><span>试验策划</span>
+          </div>
+          <a href="sl-test.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card" data-category="engineering">
+          <div class="project-card-title">XX 小型无人潜航器（UUV）总装总调</div>
+          <div class="project-card-role">调试工程师 · 2024.11 — 2025.03</div>
+          <div class="project-card-desc">
+            完成 5 条 UUV 的总装总调，涵盖电缆测试、传感器标定、通讯测试到整机联调全流程。
+          </div>
+          <div class="project-card-tags">
+            <span>QT</span><span>CAN</span><span>系统集成</span>
+          </div>
+          <a href="uuv-assembly.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card" data-category="engineering">
+          <div class="project-card-title">XX 虚实结合 YX 验证</div>
+          <div class="project-card-role">主操控手 · 2024.05 — 2024.06</div>
+          <div class="project-card-desc">
+            主控 UUV 在 3 级海况下完成自主任务，航迹跟踪精度超预期 20%，
+            获"操作精准度标兵"评价。
+          </div>
+          <div class="project-card-tags">
+            <span>QT</span><span>平台控制</span><span>试验设计</span>
+          </div>
+          <a href="yx-validation.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card" data-category="engineering">
+          <div class="project-card-title">XX 微小型 UUV 原理样机开发</div>
+          <div class="project-card-role">核心成员 · 2023.09 — 2024.03</div>
+          <div class="project-card-desc">
+            C 语言 Linux 嵌入式开发，调试 GPIO/USART，完成水面遥控、定航及定点导航三种功能验证。
+          </div>
+          <div class="project-card-tags">
+            <span>Linux</span><span>C 语言</span><span>嵌入式</span>
+          </div>
+          <a href="uuv-prototype.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card" data-category="engineering">
+          <div class="project-card-title">XX 超大型 UUV 总装总调</div>
+          <div class="project-card-role">核心成员 · 2023.07 — 2023.09</div>
+          <div class="project-card-desc">
+            开发 QT 卫星模拟上位机，参与 UUV 导航软件开发，完成串口/网口数据转发与数据库存储。
+          </div>
+          <div class="project-card-tags">
+            <span>QT</span><span>软件开发</span><span>通讯测试</span>
+          </div>
+          <a href="uuv-large-assembly.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+        <div class="project-card" data-category="competition">
+          <div class="project-card-title">2024 年水下无人设备竞赛</div>
+          <div class="project-card-role">学生领队 · 2024.09 — 2024.11</div>
+          <div class="project-card-desc">
+            协助制定湖试计划，开发 QT 路径规划工具，设计脚本实现传感器测试与数据自动解析可视化。
+          </div>
+          <div class="project-card-tags">
+            <span>QT</span><span>脚本开发</span><span>数据分析</span>
+          </div>
+          <a href="underwater-competition.html" class="project-card-link">了解更多 →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2025 赵邵平 · Built with ❤️</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top" aria-label="返回顶部">↑</button>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // 分类筛选
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(function(card) {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
