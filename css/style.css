@@ -311,6 +311,25 @@ ul { list-style: none; }
   text-align: center;
 }
 
+.hero-avatar {
+  margin-bottom: var(--space-lg);
+}
+
+.hero-avatar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.hero-avatar img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
 .hero-name {
   font-size: 3.5rem;
   font-weight: 800;
@@ -949,6 +968,11 @@ ul { list-style: none; }
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
+  }
+
+  .hero-avatar img {
+    width: 100px;
+    height: 100px;
   }
 
   .hero-name {
